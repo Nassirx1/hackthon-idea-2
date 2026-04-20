@@ -130,7 +130,7 @@ def clean_text(text: str) -> str:
 def score_badge_colour(score: float) -> str:
     """Return a CSS colour string for a 0-100 score."""
     if score >= 75:
-        return "#27ae60"
+        return "#7a9e7e"
     if score >= 50:
-        return "#f39c12"
-    return "#e74c3c"
+        return "#e8a855"
+    return "#c45a3a"

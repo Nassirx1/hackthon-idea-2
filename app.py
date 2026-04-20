@@ -404,7 +404,7 @@ is_ar = st.session_state.lang == "ar"
 st.markdown(f"""
 <style>
 [data-testid="stSidebar"] {{
-    background: linear-gradient(180deg,#1e3c78 0%,#2a5298 100%);
+    background: linear-gradient(180deg,#b5533c 0%,#d98c5f 100%);
 }}
 [data-testid="stSidebar"] * {{ color: #fff !important; }}
 .score-pill {{
@@ -412,11 +412,11 @@ st.markdown(f"""
     font-weight:700; font-size:15px; color:#fff;
 }}
 .tag {{
-    display:inline-block; background:#e8f0fe; color:#1e3c78;
+    display:inline-block; background:#f3e3d3; color:#8a3a24;
     padding:2px 8px; border-radius:12px; font-size:12px; margin:2px;
 }}
 .tag-miss {{
-    display:inline-block; background:#fde8e8; color:#c0392b;
+    display:inline-block; background:#fbe4d8; color:#a0421c;
     padding:2px 8px; border-radius:12px; font-size:12px; margin:2px;
 }}
 {"/* RTL mode */.main .block-container{direction:rtl!important;}.stMarkdown,.stText,p,li,label{direction:rtl!important;text-align:right!important;}h1,h2,h3,h4,h5{direction:rtl!important;text-align:right!important;}.stTextInput input,.stTextArea textarea{direction:rtl!important;text-align:right!important;}.stSelectbox>div,.stRadio>label{direction:rtl!important;text-align:right!important;}[data-testid='stSidebar'] .stRadio{{direction:rtl!important;}}" if is_ar else ""}
@@ -445,11 +445,11 @@ def gauge_chart(value: float, title: str):
         number={"suffix": "%", "font": {"size": 18}},
         gauge={
             "axis": {"range": [0, 100]},
-            "bar": {"color": "#2a5298"},
+            "bar": {"color": "#b5533c"},
             "steps": [
-                {"range": [0, 40], "color": "#fde8e8"},
-                {"range": [40, 70], "color": "#fef9e7"},
-                {"range": [70, 100], "color": "#e8f8f5"},
+                {"range": [0, 40], "color": "#fbe4d8"},
+                {"range": [40, 70], "color": "#faeccb"},
+                {"range": [70, 100], "color": "#dfead0"},
             ],
         },
     ))
@@ -540,7 +540,7 @@ if page == t["nav_home"]:
         fig = px.histogram(
             pd.DataFrame(all_matches), x="overall_score", nbins=20,
             labels={"overall_score": t["chart_score_x"]},
-            color_discrete_sequence=["#2a5298"],
+            color_discrete_sequence=["#b5533c"],
         )
         fig.update_layout(height=260, margin=dict(l=0, r=0, t=20, b=0))
         st.plotly_chart(fig, use_container_width=True)
@@ -914,7 +914,7 @@ elif page == t["nav_gap"]:
         fig_r = go.Figure(go.Scatterpolar(
             r=vals+[vals[0]], theta=cats+[cats[0]],
             fill="toself", fillcolor="rgba(42,82,152,0.25)",
-            line=dict(color="#2a5298"),
+            line=dict(color="#b5533c"),
         ))
         fig_r.update_layout(polar=dict(radialaxis=dict(range=[0,100])),
                             showlegend=False, height=300,

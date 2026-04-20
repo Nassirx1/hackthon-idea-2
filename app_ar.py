@@ -96,14 +96,14 @@ h1, h2, h3, h4, h5 {
 }
 /* الشريط الجانبي */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0d2b5e 0%, #1a4a9e 100%) !important;
+    background: linear-gradient(180deg, #8a3a24 0%, #b5533c 100%) !important;
 }
 [data-testid="stSidebar"] * { color: #fff !important; }
 [data-testid="stSidebar"] .stRadio { direction: rtl !important; }
 /* البطاقات */
 .metric-card {
-    background: #f8faff;
-    border-right: 4px solid #1a4a9e;
+    background: #fbf5ee;
+    border-right: 4px solid #b5533c;
     border-left: none;
     border-radius: 8px;
     padding: 12px 16px;
@@ -120,8 +120,8 @@ h1, h2, h3, h4, h5 {
 }
 .tag {
     display: inline-block;
-    background: #e8f0fe;
-    color: #1a4a9e;
+    background: #f3e3d3;
+    color: #8a3a24;
     padding: 2px 8px;
     border-radius: 12px;
     font-size: 12px;
@@ -130,8 +130,8 @@ h1, h2, h3, h4, h5 {
 }
 .tag-miss {
     display: inline-block;
-    background: #fde8e8;
-    color: #c0392b;
+    background: #fbe4d8;
+    color: #a0421c;
     padding: 2px 8px;
     border-radius: 12px;
     font-size: 12px;
@@ -140,10 +140,10 @@ h1, h2, h3, h4, h5 {
 }
 /* رأس الصفحة */
 .section-header {
-    color: #0d2b5e;
+    color: #8a3a24;
     font-size: 18px;
     font-weight: 700;
-    border-bottom: 2px solid #1a4a9e;
+    border-bottom: 2px solid #b5533c;
     padding-bottom: 4px;
     margin-top: 16px;
     direction: rtl;
@@ -184,11 +184,11 @@ def gauge_chart(value: float, title: str):
         number={"suffix": "%", "font": {"size": 18}},
         gauge={
             "axis": {"range": [0, 100]},
-            "bar": {"color": "#1a4a9e"},
+            "bar": {"color": "#b5533c"},
             "steps": [
-                {"range": [0, 40], "color": "#fde8e8"},
-                {"range": [40, 70], "color": "#fef9e7"},
-                {"range": [70, 100], "color": "#e8f8f5"},
+                {"range": [0, 40], "color": "#fbe4d8"},
+                {"range": [40, 70], "color": "#faeccb"},
+                {"range": [70, 100], "color": "#dfead0"},
             ],
         },
     ))
@@ -277,7 +277,7 @@ if page == "🏠 الرئيسية":
         fig = px.histogram(
             pd.DataFrame(all_matches), x="overall_score", nbins=20,
             labels={"overall_score": "نسبة المطابقة الكلية (%)"},
-            color_discrete_sequence=["#1a4a9e"],
+            color_discrete_sequence=["#b5533c"],
         )
         fig.update_layout(height=280, margin=dict(l=0, r=0, t=20, b=0))
         st.plotly_chart(fig, use_container_width=True)
@@ -711,7 +711,7 @@ elif page == "🔍 تحليل الفجوات":
             r=vals + [vals[0]], theta=cats + [cats[0]],
             fill="toself",
             fillcolor="rgba(26,74,158,0.25)",
-            line=dict(color="#1a4a9e"),
+            line=dict(color="#b5533c"),
         ))
         fig_radar.update_layout(
             polar=dict(radialaxis=dict(range=[0, 100])),

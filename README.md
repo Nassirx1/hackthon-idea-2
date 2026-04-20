@@ -57,13 +57,13 @@ The app opens at **http://localhost:8501**
 On the very first run, Fursi automatically:
 
 1. Creates `demo_cvs/Nasser_AlDataScience_CV.pdf` and `demo_cvs/Sara_Analytics_CV.pdf`
-2. Seeds 3 sample jobs (Tabby, BlackRock, Mozn)
+2. Seeds 3 sample jobs with fictional companies (NexaCore AI, Veridian Capital, Stratos Analytics)
 3. Parses both CVs and extracts features
 4. Computes all student × job match scores
 
 Expected outcomes:
-- **Nasser** → highest match with Tabby AI Automation Intern & Mozn Data Science Intern
-- **Sara** → highest match with BlackRock Client & Product Summer Intern
+- **Nasser** → highest match with NexaCore AI Automation Intern & Stratos Analytics Data Science Intern
+- **Sara** → highest match with Veridian Capital Client & Product Summer Intern
 
 No manual setup is needed for the demo.
 
@@ -123,7 +123,7 @@ fursi/
 ```
 overall_score = (
     0.35 × semantic_similarity   # sentence-transformers cosine similarity
-  + 0.30 × skill_overlap         # Jaccard: CV skills ∩ job skills / union
+  + 0.30 × skill_overlap         # coverage: matched job skills / total job skills
   + 0.20 × keyword_overlap       # TF-IDF keyword Jaccard
   + 0.15 × project_experience    # job keywords present in CV proj/exp sections
 ) × 100

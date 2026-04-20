@@ -154,14 +154,14 @@ def _create_pdf_reportlab(filepath: str, cv: dict):
             "Heading1Custom",
             parent=styles["Heading1"],
             fontSize=20,
-            textColor=colors.HexColor("#1e3c78"),
+            textColor=colors.HexColor("#b5533c"),
             spaceAfter=4,
         )
         heading2 = ParagraphStyle(
             "Heading2Custom",
             parent=styles["Heading2"],
             fontSize=12,
-            textColor=colors.HexColor("#1e3c78"),
+            textColor=colors.HexColor("#b5533c"),
             spaceBefore=8,
             spaceAfter=4,
         )
@@ -175,7 +175,7 @@ def _create_pdf_reportlab(filepath: str, cv: dict):
         story = []
         story.append(Paragraph(cv["name"], heading1))
         story.append(Paragraph(f"{cv['education']} | {cv['location']}", body_style))
-        story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#1e3c78")))
+        story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#b5533c")))
         story.append(Spacer(1, 8))
 
         def add_section(title: str, content):
